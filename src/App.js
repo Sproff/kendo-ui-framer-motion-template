@@ -1,5 +1,7 @@
-import React from "react"
-import Home from "./pages/Home"
+import React from "react";
+import "@progress/kendo-ui";
+import "@progress/kendo-theme-default/dist/all.css";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
@@ -7,6 +9,6 @@ const App = () => {
       <Home />
     </div>
   );
-}
+};
 
 export default App;

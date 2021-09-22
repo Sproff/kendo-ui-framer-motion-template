@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Badge } from "@chakra-ui/react";
+import { Card, CardBody, CardImage } from "@progress/kendo-react-layout";
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -7,48 +7,91 @@ const Home = () => {
     imageUrl: "https://bit.ly/2Z4KKcF",
     imageAlt: "Framer Picture",
     title: "Simple Card App",
-    desc: "A production-ready motion library for React. Utilize the power behind Framer, the best prototyping tool for teams.",
+    desc:
+      "A production-ready motion library for React. Utilize the power behind Framer, the best prototyping tool for teams.",
   };
   return (
-    <Box>
+    <Card>
       <motion.div
         initial={{ width: 0, opacity: 0 }}
         animate={{ width: "100%", opacity: 1 }}
         transition={{ delay: 1, duration: 2 }}
       >
-        <Box
-          h="100vh"
-          bg="#e6dfdf"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
+        <CardBody
+          style={{
+            height: "100vh",
+            background: "#e6dfdf",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+          <div
+            style={{
+              maxWidth: "400px",
+              borderWidth: "1px",
+              borderRadius: "10px",
+              overflow: "hidden",
+              border: "1px solid #fafafa",
+            }}
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 5, duration: 4 }}
             >
-              <Image src={property.imageUrl} alt={property.imageAlt} />
+              <CardImage src={property.imageUrl} alt={property.imageAlt} />
             </motion.div>
-            <Box p="6">
-              <Box d="flex" alignItems="baseline">
-                <Badge borderRadius="full" px="2" colorScheme="teal">
+            <div
+              style={{
+                padding: "1rem",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  width: "50%",
+                }}
+              >
+                <div
+                  style={{
+                    borderRadius: "15px",
+                    background: "rgb(119 220 220)",
+                    padding: "0.1rem 0.7rem",
+                    fontWeight: "bold",
+                    fontSize: ".8rem",
+                    textTransform: "uppercase",
+                  }}
+                >
                   New
-                </Badge>
-                <Box
-                  color="gray.500"
-                  fontWeight="semibold"
-                  letterSpacing="wide"
-                  fontSize="xs"
-                  textTransform="uppercase"
-                  ml="2"
+                </div>
+                <div
+                  style={{
+                    color: "gray.500",
+                    fontWeight: "semibold",
+                    letterSpacing: "1px",
+                    fontSize: ".8rem",
+                    textTransform: "uppercase",
+                    fontWeight: "600",
+                    color: "#968d86",
+                  }}
                 >
                   {property.title}
-                </Box>
-              </Box>
+                </div>
+              </div>
 
-              <Box my="1.5rem" fontWeight="400" as="h4" lineHeight="1.8">
+              <div
+                style={{
+                  marginTop: "1.5rem",
+                  marginBottom: "1.5rem",
+                  fontWeight: "400",
+                  fontSize: "1.09rem",
+                  lineHeight: "1.8",
+                  color: "#000",
+                }}
+              >
                 <motion.div
                   initial={{ y: -50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -56,17 +99,33 @@ const Home = () => {
                 >
                   {property.desc}
                 </motion.div>
-              </Box>
+              </div>
 
-              <Box display="flex" justifyContent="space-between">
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: ".5rem 0",
+                }}
+              >
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 4, duration: 1.4 }}
                 >
-                  <Badge borderRadius="5px" p=".2rem 1rem" colorScheme="red" textTransform="capitalize">
+                  <div
+                    style={{
+                      background: "rgb(255 17 0 / 25%)",
+                      borderRadius: "5px",
+                      padding: ".2rem 1rem",
+                      fontWeight: "bold",
+                      fontSize: ".8rem",
+                      textTransform: "capitalize",
+                      letterSpacing: "1px",
+                    }}
+                  >
                     Animation
-                  </Badge>
+                  </div>
                 </motion.div>
 
                 <motion.div
@@ -74,25 +133,45 @@ const Home = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 4, duration: 1.8 }}
                 >
-                  <Badge borderRadius="5px" p=".2rem 1rem" colorScheme="green" textTransform="capitalize">
+                  <div
+                    style={{
+                      background: "rgb(119 220 220)",
+                      borderRadius: "5px",
+                      padding: ".2rem 1rem",
+                      fontWeight: "bold",
+                      fontSize: ".8rem",
+                      textTransform: "capitalize",
+                      letterSpacing: "1px",
+                    }}
+                  >
                     Framer
-                  </Badge>
+                  </div>
                 </motion.div>
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 4, duration: 2.1 }}
                 >
-                  <Badge borderRadius="5px" p=".2rem 1rem" colorScheme="yellow" textTransform="capitalize">
+                  <div
+                    style={{
+                      background: "rgb(251 237 116)",
+                      borderRadius: "5px",
+                      padding: ".2rem 1rem",
+                      fontWeight: "bold",
+                      fontSize: ".8rem",
+                      textTransform: "capitalize",
+                      letterSpacing: "1px",
+                    }}
+                  >
                     Interaction
-                  </Badge>
+                  </div>
                 </motion.div>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
+              </div>
+            </div>
+          </div>
+        </CardBody>
       </motion.div>
-    </Box>
+    </Card>
   );
 };
 
